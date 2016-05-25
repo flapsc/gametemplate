@@ -82,13 +82,13 @@ package ua.games.core.controller
 		}
 		
 		private var _filterMapEventType:String;
-		private function filterMapByEventType( item:CommandInfo, index:int, vec:Vector.<CommandInfo> ):Boolean { }
+		private function filterMapByEventType( item:CommandInfo, index:int, vec:Vector.<CommandInfo> ):Boolean { return item.eventType == _filterMapEventType; }
 		
 		/**
-		 * 
-		 * @param	event
+		 * Global context event listener.
+		 * @param	event - The standart flash.events.Event instance.
 		 */
-		private function context_gameEventsGlobal_Handler( event:Event ):void
+		private function context_globalBaseEvents_Handler( event:Event ):void
 		{
 
 			_filterMapEventType = event.type;
@@ -104,15 +104,6 @@ package ua.games.core.controller
 				,this
 			);
 
-		}
-		
-		/**
-		 * 
-		 * @param	event
-		 */
-		private function context_globalBaseEvents_Handler( event:Event ):void
-		{
-			
 		}
 	}
 	
